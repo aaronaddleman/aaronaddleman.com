@@ -1,5 +1,6 @@
 Date: 16 October, 2012
 Categories: categories/bash, categories/git, categories/sysadmin
+Summary: How to move/clone your repository from one server to another and some small background information of why to use the --bare option (really its here for my note taking).
 
 # Cloning your git repository from one server to another
 
