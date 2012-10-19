@@ -28,5 +28,4 @@ When faced with an array with duplicate items and the output needs to be unique,
       else
         p "#{item}"
       end
-      # @counter = 0
     end
