@@ -70,8 +70,35 @@ module Nesta
         end
         haml(toc_template, :layout => false, :locals => { :toc_headers => toc_headers })
       end
+      
+      def protected!
+        unless authorized?
+          response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
+          throw(:halt, [401, "Not authorized\n"])
+        end
+      end
+
+      def authorized?
+        @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+        @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ['admin', 'admin']
+      end
+      
     end
 
+    
     # Add new routes here.
+    get '/protected/*' do
+      protected!
+      # "Welcome, authenticated client"
+      
+      set_common_variables
+      parts = params[:splat].map { |p| p.sub(/\/$/, '') }
+      @page = Nesta::Page.find_by_path(File.join(parts))
+      raise Sinatra::NotFound if @page.nil?
+      @title = @page.title
+      set_from_page(:description, :keywords)
+      cache haml(@page.template, :layout => @page.layout)
+      
+    end
   end
 end

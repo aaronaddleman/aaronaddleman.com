@@ -45,4 +45,14 @@ I came across the library called [htmlentities][1] and with a little testing I f
     
 I might try to use the results.inner_text but this works great for this project.
 
+## Attempt 5 (outcome = better than attempt 4)
+
+I finally realized that in the case you have a document that contains entities and characters that should be in entity form, you need to decode the entities first, then encode all of the characters that need to be in entity form.  Not sure why 'htmlentities' does not do this automatically, but oh well. Below is an example of what I like to do in my code:
+
+    :::ruby
+    require 'htmlentities'
+
+    decoded_value = HTMLEntities::new::decode(value)
+    HTMLEntities::new::encode(decoded_value, :basic, :named, :decimal).gsub(/\s\s+/, " ").gsub(/&#10;/, "")
+
 [1]: http://htmlentities.rubyforge.org/ "Html Entities"
