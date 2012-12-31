@@ -6,30 +6,29 @@ Categories: categories/sysadmin
 After using the rewritemap a couple of times for certain projects I needed to make some notes about its use. Here is a config that I have been using recently that has been doing the job pretty good:
 
     :::apache-config
-    # define the map
+    ### define the map
     RewriteMap urlmap txt:/etc/apache2/map.txt
 
-    # turn on rewrite engine
+    ### turn on rewrite engine
     RewriteEngine on
     RewriteLog "/var/log/apache2/domain.rewrite.log"
     RewriteLogLevel 5
 
-    # redirect domain.com to www.domain.com
+    ### redirect domain.com to www.domain.com
     RewriteCond %{HTTP_HOST} ^domain.com
     RewriteRule ^/(.*)$ http://www.domain.com/$1 [R=permanent,L]
 
-    # Ignore Matching Directories
+    ### Ignore Matching Directories
     RewriteRule ^/(files|js|file.php|themes) - [L,NC]
 
-    # require a match in the map to continue
+    ### require a match in the map to continue
     RewriteCond ${urlmap:/$1} ^.+
 
-    # rewrite the entire request and return the value from the map file
+    # Choose one of the following rewrite rules:
+
+    ### rewrite the entire request and return the value from the map file
     RewriteRule ^/(.+)$ ${urlmap:/$1} [R,L]
-
-    # OR
-
-    # rewrite the entire request to a new domain
+    ### rewrite the entire request to a new domain
     RewriteRule ^/(.+)$ http://www.newdomain.com/${urlmap:/$1} [R,L]
 
 # The map file /etc/apache2/map.txt
