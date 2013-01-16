@@ -8,7 +8,7 @@ This took longer than it should have to get setup. For some reason, I could not 
 
 ## Installation
 
-### Yum install
+### Yum installing
 
 Because this was a vmware server on my laptop for testing munin, I went with both the node and the server installation.
 
