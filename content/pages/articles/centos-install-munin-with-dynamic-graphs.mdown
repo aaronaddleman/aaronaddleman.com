@@ -27,6 +27,8 @@ First thing you have to do is check to make sure the temp directories are allowe
     chmod 777 /var/lib/munin/cgi-tmp
     chmod 775 /var/lib/munin/cgi-tmp/munin-cgi-graph
 
+## Configuration
+
 ### Munin.conf
 
 Next ensure you have the following in your /etc/munin/munin.conf file:
