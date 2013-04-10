@@ -4,6 +4,10 @@ Summary: How to move/clone your repository from one server to another and some s
 
 # Cloning your git repository from one server to another
 
+## Update - April 10, 2013
+
+Using `rsync` is much easier if you have that option. I have not seen a down side after doing the copy 5 days ago but after copying 8 repositories over to a new server all seems to be working great. Below is a method to use if `rsync` is not available.
+
 ## The short answer
 
 To clone your repository from one location to another the following steps can be used in your terminal prompt:
