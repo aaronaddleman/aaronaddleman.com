@@ -5,6 +5,11 @@ Summary: While using Nestacms, I wanted to add a new syntax for parsing some pla
 
 # Adding syntax to textpow for coloring with Ultraviolet
 
+## Making my own syntax
+
+
+## Importing from TextMate
+
 So far I have been unsuccessful in adding a new syntax into the Textpow ruby library. I have tried to use the utilities `plist2syntax` and `plist2yaml` but I keep coming up with the error:
 
     /Users/aaron/.rvm/gems/ruby-1.9.2-p320/gems/plist-3.1.0/lib/plist/parser.rb:105:in `parse': Unimplemented element (RuntimeError)
