@@ -46,20 +46,21 @@ Allowing your redmine instance to take over the entire domain! Here are the step
 				PassengerResolveSymlinksInDocumentRoot on
 
 				### (optional) redirect to https
-        #RewriteEngine On
-     		#RewriteCond %{HTTPS} off
-      	### exception for the email handler to not rewrite to https
-      	#RewriteCond %{REMOTE_ADDR} !###\.###\.###\.###
-      	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+		        #RewriteEngine On
+    		 	#RewriteCond %{HTTPS} off
+
+      			### exception for the email handler to not rewrite to https
+      			#RewriteCond %{REMOTE_ADDR} !###\.###\.###\.###
+      			#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 			</Directory>
 
 
 			ErrorLog ${APACHE_LOG_DIR}/red.example.org-error.log
 
-      # Possible values include: debug, info, notice, warn, error, crit,
-      # alert, emerg.
-      LogLevel warn
-      CustomLog ${APACHE_LOG_DIR}/redmine.example.org-access.log combined
+      		# Possible values include: debug, info, notice, warn, error, crit,
+      		# alert, emerg.
+      		LogLevel warn
+      		CustomLog ${APACHE_LOG_DIR}/redmine.example.org-access.log combined
 		</VirtualHost>
 
 

@@ -1,6 +1,6 @@
 Date: 12 April, 2013
 Categories: categories/ruby
-Flag: draft
+Flags: draft
 Summary: While using Nestacms, I wanted to add a new syntax for parsing some plain files and notes and test how to add a new syntax language from Textmate.
 
 # Adding syntax to textpow for coloring with Ultraviolet
