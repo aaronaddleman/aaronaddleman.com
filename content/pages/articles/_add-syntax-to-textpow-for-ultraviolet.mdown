@@ -1,0 +1,41 @@
+Date: 12 April, 2013
+Categories: categories/ruby
+Flag: draft
+Summary: While using Nestacms, I wanted to add a new syntax for parsing some plain files and notes and test how to add a new syntax language from Textmate.
+
+# Adding syntax to textpow for coloring with Ultraviolet
+
+## Making my own syntax
+
+
+## Importing from TextMate
+
+So far I have been unsuccessful in adding a new syntax into the Textpow ruby library. I have tried to use the utilities `plist2syntax` and `plist2yaml` but I keep coming up with the error:
+
+    /Users/aaron/.rvm/gems/ruby-1.9.2-p320/gems/plist-3.1.0/lib/plist/parser.rb:105:in `parse': Unimplemented element (RuntimeError)
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/gems/plist-3.1.0/lib/plist/parser.rb:29:in `parse_xml'
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/gems/textpow-1.3.0/bin/plist2yaml:7:in `<top (required)>'
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/bin/plist2yaml:19:in `load'
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/bin/plist2yaml:19:in `<main>'
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/bin/ruby_noexec_wrapper:14:in `eval'
+      from /Users/aaron/.rvm/gems/ruby-1.9.2-p320/bin/ruby_noexec_wrapper:14:in `<main>'
+
+But maybe I can write my own into the yaml format. For a starting example, I would like to make a coloring syntax for the /etc/hosts file.
+
+# Notes
+
+Adding a new syntax:
+
+add download location and scopeName to update_syntax task in Rakefile
+
+rake update_syntax
+
+run tests rake to see if the syntax is parseable
+
+(from the site: https://github.com/grosser/textpow)
+
+
+1. How to add Rakefile
+2. How to add the update_syntax with scopeName and the download location
+3. rake update_syntax
+4. use `uv --list syntaxes`

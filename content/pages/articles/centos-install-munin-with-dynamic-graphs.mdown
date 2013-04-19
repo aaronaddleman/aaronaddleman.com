@@ -4,6 +4,8 @@ Summary: This took longer than it should have to get setup. For some reason, I c
 
 # Howto install munin version 2.0.8 with dynamic graphs on Centos 6
 
+*Update 10 April, 2013:* Munin version 2.0.10 now includes better support for dynamic zooming out of the box.
+
 This took longer than it should have to get setup. For some reason, I could not find any references on how to get the dynamic zooming of munin to work. The documentation was not very helpful from the example provide (because it did not work) nor in ascertaining how to solve the problem. Anyways, here is my journey and configuration that will help me out the the future.
 
 ## Installation
