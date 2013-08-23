@@ -1,3 +1,5 @@
 .git
 tmp/*
 REVISION
+.sass-cache/*
+exclude.txt
