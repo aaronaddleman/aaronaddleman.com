@@ -11,3 +11,15 @@ This morning I almost yelled out "that is so @#%*ing awesome" at work because th
 I was making a Puppet module in Sublime Text 2 and had the following code:
 
       :::puppet
+      blah blah
+      
+then I wanted to copy all of the variables across and have this result:
+
+      :::puppet
+      blah blah
+      
+Here are the steps I did to acheive my goal:
+
+1. one
+1. two
+1. three
