@@ -32,6 +32,6 @@ end
 
 namespace :sync do
   task :content do
-    system("rsync -nvrltoDzO --progress --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/ /Users/aaron/Documents/Work/personal/aaronaddleman-squaron/")
+    system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
   end
 end
