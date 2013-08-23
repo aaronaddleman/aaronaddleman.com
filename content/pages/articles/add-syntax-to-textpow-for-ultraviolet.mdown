@@ -1,6 +1,5 @@
 Date: 18 June, 2013
 Categories: categories/ruby
-Flags: draft
 Summary: While using Nestacms, I wanted to add a new syntax to Textpow and Ultraviolet for parsing some varnish configuration language files (or vcl files) to display on my web site. My adventure on this turned out to be easy once I realized how cool Nesta really is!
 
 # Add new syntax into Nestacms for use with Ultraviolet and Textpow
