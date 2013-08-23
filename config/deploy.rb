@@ -2,9 +2,8 @@ set :application, "aaronaddleman.com"
 set :repository,  "git@www.squaron.net:aaronaddleman"
 set :scm, :git
 set :keep_releases, 15
-set :app_root, "wordpress"
 set :deploy_via, :remote_cache
-ssh_options[:user] = 'deployer'
+ssh_options[:user] = 'rvmuser'
 set :use_sudo, false
 default_run_options[:pty] = true
 set :remote_user, 'deployer'
@@ -28,5 +27,11 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+end
+
+namespace :sync do
+  task :content do
+    system("rsync -nvrltoDzO --progress --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/ /Users/aaron/Documents/Work/personal/aaronaddleman-squaron/")
   end
 end
