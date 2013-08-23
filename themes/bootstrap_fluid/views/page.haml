@@ -1,0 +1,41 @@
+.row-fluid
+  .span3
+  
+  / /span
+  .span9
+    .hero-unit
+      %h1 Hello, world!
+      %p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+      %p
+        %a.btn.btn-primary.btn-large Learn more »
+    .row-fluid
+      .span4
+      - unless @page.pages.empty?
+        - @page.pages.each do |page|
+          %h2
+            %a(href="#{url(page.abspath)}")= page.heading
+          %p
+          - if page.summary.nil? || page.summary.empty?
+            ~ page.body(self)
+          - else
+            ~ page.summary
+            %p.read_more
+              %a(href="#{url(page.abspath)}")= page.read_more
+          = haml :page_meta, :layout => false, :locals => { :page => page }
+      = @page.articles
+      - unless @page.articles.empty?
+        - posts = @page.articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+        - posts.each do |post|
+          %h2
+            %a(href="#{post.abspath}")= post.heading
+            = post.summary
+            %a(href="#{post.permalink}")= post.read_more
+        = will_paginate posts
+      
+      / /span
+    / /row
+  / /span
+/ /row
+%hr
+  %footer
+    %p © Company 2012

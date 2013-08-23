@@ -1,0 +1,21 @@
+!!!
+%head
+  %meta{charset: "utf-8"}
+  %meta{name: "viewport", content: "width=device-width"}
+  %meta{name: "author", content: "Aaron Addleman"}
+  %meta{name: "description", content:""}
+  / %meta{name: "HandhelpFriendly", content:"True"}
+  / %meta{name: "MobileOptimized", content:"320"}
+  / %meta{name: "viewport", content: "width=device-width, intial-scale=1"}
+  %title= @title
+  %link{:href => "http://fonts.googleapis.com/css?family=Alegreya", :rel => "stylesheet", :type => "text/css"}
+  %link{:rel=>"stylesheet", :href=>"#{url('/css/uv_themes/eiffel.css')}"}
+  %link{:rel=>"stylesheet", :href=>"#{url('/responsiveone/stylesheets/foundation.css')}"}
+  %link{:rel=>"stylesheet", :href=>"#{url('/responsiveone/stylesheets/normalize.css')}"}
+  %link{:rel=>"stylesheet", :href=>"#{url('/responsiveone/stylesheets/app.css')}"}
+  %link(href="#{url('/css/master.css')}" media="screen" rel="stylesheet")
+  %script{:src=>"#{url('/responsiveone/javascripts/foundation.min.js')}"}
+%body
+  .row
+    = haml :header, :layout => false
+    = yield

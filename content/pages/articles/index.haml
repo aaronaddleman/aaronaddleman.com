@@ -1,0 +1,44 @@
+Title: Articles
+
+%h1 Articles
+
+/ %section.articles= article_summaries(latest_articles)
+
+/ - posts = Nesta::Page.find_all.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+/ - posts = Nesta::Page.find_all
+- posts = Nesta::Page.find_articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+
+/ - items = {}
+/ - posts.each do |i|
+/   - if ! i.date.nil?
+/     - y, m, d = i.date.to_s.split("T")[0].split("-")
+/     - if items.has_key?("#{y}-#{m}")
+/       - items["#{y}-#{m}"].push(i)
+/     - else
+/       - items["#{y}-#{m}"] = Array.new
+/       - items["#{y}-#{m}"].push(i)
+
+/ - items.each do |k, v|
+/   - y, m = k.split("-")
+/   %h2
+/     Posted on 
+/     = k
+/   - v.each do |post|
+/     %article
+/       %div
+/         %h3
+/           %a(href="#{url(post.path)}")= post.heading
+/         = post.summary
+/         %a(href="#{url(post.path)}")= post.read_more
+/         = haml :page_meta, :layout => false, :locals => { :page => post }
+    
+
+- posts.each do |post|
+  %article
+    %div
+      %h3
+        %a(href="#{url(post.path)}")= post.heading
+        = post.summary
+        %a(href="#{url(post.path)}")= post.read_more
+
+= will_paginate posts

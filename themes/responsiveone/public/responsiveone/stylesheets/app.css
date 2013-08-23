@@ -1,0 +1,24 @@
+body {
+  background-color: #f1f1f1;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hgroup h1 a {
+  color: black;
+  /*font-family: 'Alegreya', serif;*/
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-size: 2em;
+}
+
+.side-nav {
+  *position: relative;
+  *z-index: 2;
+  overflow: visible;
+  margin-bottom: 18px;
+}
+
+.breadcrumbs a, .breadcrumbs > * {
+  color: rgba(0, 0, 0, 0.5);
+}
+

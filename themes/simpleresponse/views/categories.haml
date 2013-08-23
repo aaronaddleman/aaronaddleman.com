@@ -1,0 +1,23 @@
+%div.navbar.navbar-fixed-top
+	%div.navbar-inner
+		%div.container
+			%button.btn.btn-navbar.collapsed(type="button" data-toggle="collapse" data-target=".nav-collapse")
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a.brand
+				= Nesta::Config.title
+			%div.nav-collapse.collapse.navbar-responsive-collapse(style="height: auto")
+				- display_menu(@menu_items, :class => "nav nav-pills pull-right")
+
+/ %div.navbar.navbar-fixed-top
+/ 	%div.navbar-inner
+/ 		%div.container-fluid
+/ 			%button.btn.btn-navbar.collapsed(type="button" data-toggle="collapse" data-target=".nav-collapse")
+/ 				%span.icon-bar
+/ 				%span.icon-bar
+/ 				%span.icon-bar
+/ 			%a.brand
+/ 				= Nesta::Config.title
+/ 			%div.nav-collapse.collapse.navbar-responsive-collapse(style="height: auto")
+/ 				- display_menu(@menu_items, :class => "nav nav-pills pull-right")

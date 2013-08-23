@@ -1,0 +1,28 @@
+Date: 02 August, 2013
+Categories: categories/puppet
+
+# Puppet Notes and Examples
+
+## Simple and helpful commands
+
+### To run the agent and see debug information
+
+    :::shell
+    # run the puppet agent manually and see the output
+    puppet agent --test --debug
+
+### To list all of the types
+
+    :::shell
+    # list all of the types available
+    puppet describe --list
+    # display information on the type
+    puppet describe file
+    puppet describe exec
+
+### Filebucket: backup and restore
+
+    :::shell
+    puppet filebucket backup /etc/passwd
+    /etc/passwd: 429b225650b912a2ee067b0a4cf1e949
+    puppet filebucket restore /tmp/passwd 429b225650b912a2ee067b0a4cf1e949

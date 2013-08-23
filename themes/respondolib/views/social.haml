@@ -1,0 +1,14 @@
+.social
+  %h5.subheader Share this:
+  - heading = @page.nil? ? @heading : @page.heading
+
+  %a{ :href => "http://delicious.com/post?url=#{url}&title=#{heading}", :title => "Bookmark on delicious.com" }
+    %img{ :src => "/zurb/images/delicious.png", :alt => "Bookmark on delicous.com" }
+  %a{ :href => "http://digg.com/submit?phase=2&url=#{url}&title=#{heading}", :title => "Digg it!" }
+    %img{ :src => "/zurb/images/digg.png", :alt => "Digg it!" }
+  %a{ :href => "http://reddit.com/submit?url=#{url}&title=#{heading}", :title => "Reddit!" }
+    %img{ :src => "/zurb/images/reddit.gif", :alt => "Reddit!" }
+  %a{:href => "https://twitter.com/share", :class => "twitter-share-button", "data-via" => "sototallysweet"}
+    Tweet
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

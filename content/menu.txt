@@ -1,0 +1,5 @@
+about
+resume
+projects
+categories
+articles

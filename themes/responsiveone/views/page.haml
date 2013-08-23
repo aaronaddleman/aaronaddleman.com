@@ -1,0 +1,14 @@
+.large-9.columns
+  - display_breadcrumbs(:class=>"breadcrumbs")
+.large-9.columns{:role => "content"}
+  TOC
+  = toc(@page)
+
+
+  %article
+    = haml :page_meta, :layout => false, :locals => { :page => @page }
+    ~ @page.to_html(self)
+  = article_summaries(@page.pages)
+.large-3.columns
+  = haml :sidebar, :layout => false
+

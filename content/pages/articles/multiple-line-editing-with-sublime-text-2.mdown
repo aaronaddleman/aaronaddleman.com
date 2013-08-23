@@ -1,0 +1,13 @@
+Date: 21 August, 2013
+Categories: categories/sublime-text-2
+Summary: Today I learned a great combination of shortcuts that can be used in Sublime Text 2 while writing a Puppet module having to do with multiple line editing.
+
+# Multiple Line Editing with Sublime Text 2
+
+This morning I almost yelled out "that is so @#%*ing awesome" at work because the multiple line editing in Sublime Text 2 is so cool. Below are the notes of what I found out about this amazing setup.
+
+## The situation
+
+I was making a Puppet module in Sublime Text 2 and had the following code:
+
+      :::puppet

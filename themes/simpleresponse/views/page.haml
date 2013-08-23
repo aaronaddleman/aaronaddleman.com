@@ -1,0 +1,33 @@
+/ %nav.breadcrumb
+/   - display_breadcrumbs
+
+/ #content
+/   %article(role="main")
+/     ~ @page.to_html(self)
+
+/     %section.pages
+/       = article_summaries(@page.pages)
+
+/     - unless @page.articles.empty?
+/       %section.articles
+/         %header
+/           %h1= articles_heading
+/         = article_summaries(@page.articles)
+
+/     = haml :page_meta, :layout => false, :locals => { :page => @page }
+
+/   = haml :comments, :layout => false
+
+/ = haml :sidebar, :layout => false
+~ @page.to_html(self)
+/ = haml :page_meta, :layout => false, :locals => { :page => @page }
+= article_summaries(@page.pages)
+/ = article_summaries(@page.articles)
+
+/ - posts = @page.articles.paginate(:page => params[:page] ? params[:page] : 1, :per_page => 6)
+/ - posts.each do |post|
+/   %h2
+/     %a(href="#{post.abspath}")= post.heading
+/     = post.summary
+/     %a(href="#{post.permalink}")= post.read_more
+/ = will_paginate posts

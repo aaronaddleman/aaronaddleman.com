@@ -1,0 +1,39 @@
+.breadcrumb
+  - if @page.parent.nil? # if the page has no parent, we are at the top, show a space to keep spacing
+    &nbsp; 
+  - else # else there is a parent and to display the nav
+    %a{ :href => "/" } Home
+    &gt;
+    - if @page.parent && url =~ /^Home/
+      - if ! @page =~ /^Home/
+        %a{ :href => @page.parent.abspath }= @page.parent.heading
+        &gt;
+    = @page.heading
+
+/ %hr
+/   = @page.heading
+/ %hr
+/   = @page.parent.abspath if ! @page =~ /^Home/
+/ %hr
+/   = @page.parent.nil?
+/ %hr
+
+#content
+  - if @page.date
+    .date.right.subheader= format_date(@page.date)
+
+  ~ @page.to_html(self)
+
+  = haml :summaries, :layout => false, :locals => { :pages => @page.pages, :heading => :h3 }
+
+  - unless @page.articles.empty?
+    %h2= "Articles on #{@page.heading}"
+    = haml :summaries, :layout => false, :locals => { :pages => @page.articles, :heading => :h3 }
+
+  - unless @page.categories.empty? or @page.categories.count == 1
+    .categories
+      %strong Categories:
+      - @page.categories.each do |category|
+        %a{ :href => category.abspath }= category.heading
+
+  = haml :comments, :layout => false
