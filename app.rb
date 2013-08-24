@@ -28,6 +28,7 @@ module Nesta
     helpers WillPaginate::Sinatra::Helpers
 
     
+    
 
     def print_code(opt={})
       filename = opt[:filename]

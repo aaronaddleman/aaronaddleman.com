@@ -1,0 +1,23 @@
+class phpsrc (
+  phpver => $phpsrc::phpver
+  phpfiletest => $phpsrc::phpfiletest
+  phpreinstall => $phpsrc::phpreinstall
+  phpopt_fpm => $phpsrc::phpopt_fpm
+  phpopt_fpm_user => $phpsrc::phpopt_fpm_user
+  phpopt_fpm_group => $phpsrc::phpopt_fpm_group
+  phpopt_enable_calendar => $phpsrc::phpopt_enable_calendar
+  phpopt_with_curl => $phpsrc::phpopt_with_curl
+  phpopt_enable_exif => $phpsrc::phpopt_enable_exif
+  phpopt_with_gd => $phpsrc::phpopt_with_gd
+  phpopt_with_gettext => $phpsrc::phpopt_with_gettext
+  phpopt_with_mysql => $phpsrc::phpopt_with_mysql
+  phpopt_with_readline => $phpsrc::phpopt_with_readline
+  phpopt_with_xmlrpc => $phpsrc::phpopt_with_xmlrpc
+  phpopt_with_pear => $phpsrc::phpopt_with_pear
+  phpopt_with_apx2 => $phpsrc::phpopt_with_apx2
+  phpopt_with_config_file_scan_dir => $phpsrc::phpopt_with_config_file_scan_dir
+  phpopt_enable_inline_optimization => $phpsrc::phpopt_enable_inline_optimization
+  phpopt_disable_all => $phpsrc::phpopt_disable_all
+  phpopt_enalbe_libxml => $phpsrc::phpopt_enalbe_libxml
+  phpopt_enable_xml => $phpsrc::phpopt_enable_xml
+)

@@ -26,7 +26,7 @@ module Nesta
     use Rack::Static, :urls => ["/pro_v0.2"], :root => "themes/pro_v0.2/public"
 
     helpers do
-      # Add new helpers here.      
+      # Add new helpers here.    
     end
 
     # Add new routes here.
