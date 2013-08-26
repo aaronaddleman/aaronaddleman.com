@@ -1,0 +1,51 @@
+Date: 21 August, 2013
+Categories: categories/sublime-text-2
+Summary: Today I learned a great combination of shortcuts that can be used in Sublime Text 2 while writing a Puppet module having to do with multiple line editing.
+
+# Multiple Line Editing with Sublime Text 2
+This morning I almost yelled out "that is so @#%*ing awesome" at work because the multiple line editing in Sublime Text 2 is so cool. I was able to select some text across multiple lines, delete the right side, then select the left side of text and paste to the right! Below are the notes of what I found out about this amazing setup.
+
+# The situation
+
+I was making a Puppet module in Sublime Text 2 and had the following code:
+
+    class {'phpsrc':
+      phpver => '5.5.2',
+      phpfiletest => '/usr/local/bin/php-cli',
+      phpreinstall => true,
+      phpopt_fpm => true,
+      phpopt_fpm_user => 'www-data',
+      phpopt_fpm_group => 'www-data',
+      phpopt_enable_calendar => true,
+      phpopt_with_curl => true,
+      phpopt_enable_exif => true,
+      phpopt_with_gd => true,
+      phpopt_with_gettext => true,
+      phpopt_with_mysql => true,
+      phpopt_with_readline => true,
+      phpopt_with_xmlrpc => true,
+      phpopt_with_pear => true,
+      phpopt_with_apx2 => true,
+      phpopt_with_config_file_scan_dir => '/usr/local/php-5.5.2/etc/conf.d',
+      phpopt_enable_inline_optimization => true,
+      phpopt_disable_all => true,
+      phpopt_enalbe_libxml => true,
+      phpopt_enable_xml => true,
+    }
+
+and wanted to replace all of the values on the right side with a some different text and replac the => with just an = .
+
+Here are my steps:
+
+1. Highlight the `=>`
+2. Select all occurances of `=>` with the keyboard short cut: `Ctrl + Cmd + g`
+3. Hit the `right arrow` once to move one character to the right of the `=>`
+4. Highlight the rest of the text to the end of each line with the keyboard short cut: `Shift + Cmd + Right Arrow`
+5. Delete the highlighted text with: `Delete`
+6. Use shift and the arrow keys to highlight `=>` and delete that as well.
+7. Type the new symbol `=`
+8. Move the cursor to the beginning of the line: `Opt + Arrows`
+9. Highlight the text that is to the left of the `=`: `Opt + Shift + Right Arrow`
+10. Copy the text of each line to the copy buffer: `Cmd + C`
+11. Move the cursor to the end of each line by using: `Cmd + Right Arrow`
+12. Insert a space and paste the code: `Cmd + v`
