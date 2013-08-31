@@ -33,5 +33,22 @@ end
 namespace :sync do
   task :content do
     system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+    if prompt_y_n("Proceed? (y/n)")
+      system("rsync -vrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+    end
+  end
+end
+
+def prompt_y_n(question)
+  logger.important "#{question} If they are okay, type y"
+  response = Capistrano::CLI.ui.ask("Answer: ")
+
+  if response.downcase =~ /(y|yes)/
+    return true
+  elseif response.downcase =~ /(n|no)/
+    return false
+  else
+    logger.important "Abort."
+    return false
   end
 end
