@@ -22,11 +22,12 @@ author:
 
 # theme: bootstrap_fluid
 # theme: pro_v1
-theme: pro_v0.2
+# theme: pro_v0.2
 # theme: bootstrap
 # theme: simpleresponse
 # theme: respondolib
 # theme: responsiveone
+theme: foundationized
 
 # If you want to use the Disqus service (http://disqus.com) to display
 # comments on your site, register a Disqus account and then specify your
