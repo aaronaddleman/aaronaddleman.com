@@ -9,9 +9,9 @@ Summary: Write articles on the go or at your desktop with Nesta, Git, iOS, webda
 While getting used to Nesta, I found myself wanting to write more articles but I was not always in front of my repository to make changes and deploy with what ever method I had tried to use (ftp, git deploy with heroku). When I found out about the iOS text editor named "Textastic" and its ability to uae webdav I thought there must be something I can do with writing articles while on the move. After a couple of designs I came up with a solution. 
 I would really like any feedback that you have about my solution as I do like making improvments.
 
-# Solution
+## Solution
 
-## the Quick
+### the Quick
 
 
 While on desktop:
@@ -27,7 +27,7 @@ While on iOS using Textastic and webdav connection:
 1. make changes
 1. upload changes
 
-## the Detailed
+### the Detailed
 
 
 Let's start with the version controlled side first. First I realized that to do this I really needed my own server so I decided to go with a micro instance from Amazon Web Services. So far this has been costing me less than $4 a month. Next I created my own gitolite setup to store the entire Nesta tree structue and content. This is not necessary as you could use something like github or bitbucket for hosting your git repository, but it is helpful with deployment.
