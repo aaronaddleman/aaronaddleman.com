@@ -41,7 +41,7 @@ Installing with brew:
     begin
       # make sure that the first option is a URL we can crawl
       # root = URI(ARGV[0])
-      root = URI("http://local.frbsf.org/")
+      root = URI("http://example.com/")
     rescue
       puts <<-INFO
     Usage:
