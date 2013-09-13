@@ -26,7 +26,7 @@ Installing with brew:
     mongod
 
 ## Crawling websites with Ruby
-
+    :::ruby
     require 'anemone'
     require 'redis'
     require 'digest/md5'
