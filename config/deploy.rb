@@ -32,9 +32,9 @@ end
 
 namespace :sync do
   task :content do
-    system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+    system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
     if prompt_y_n("Proceed? (y/n)")
-      system("rsync -vrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+      system("rsync -vrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
     end
   end
 end

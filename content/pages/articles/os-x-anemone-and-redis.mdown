@@ -1,9 +1,13 @@
 Date: 11 September, 2013
 Categories: categories/databases
 
-# Installing and using redis on Mac
+# Crawling a site with Anemone and Redis
 
 ## General
+
+Using anemone allows for crawling a website from a ruby script.
+
+## Installing Redis
 
 Installing `redis` on Mac OS X 10.8 is easy (right now) with "Brew". By running the command:
 
