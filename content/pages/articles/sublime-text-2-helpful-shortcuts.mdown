@@ -1,0 +1,13 @@
+Date: 26 September, 2013
+Categories: categories/sublime-text-2
+Summary: When working in Sublime Text 2 there are some commands that are very helpful. Here is my collection of commands that I use very frequently.
+
+# Helpful shortcuts for Sublime Text 2
+
+## Going to a line number
+
+type:
+
+`ctrl + p` then use `:12`
+
+to goto line number 12.

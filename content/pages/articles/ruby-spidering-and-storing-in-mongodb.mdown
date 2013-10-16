@@ -76,7 +76,9 @@ Installing with brew:
     require 'mongo'
     include Mongo
     mongo_client = MongoClient.new("localhost", 27017)
+    # list datbases
     mongo_client.database_names
+    # list collection names
     db.collection_names
     db = mongo_client.db("pageinfo")
     coll = db.collection("pagehash")
@@ -84,6 +86,10 @@ Installing with brew:
     # find records
     coll.find_one
     coll.find.each { |row| puts row.inspect }
+
+## To drop the records
+
+    coll.remove
 
 ## Observations
 
