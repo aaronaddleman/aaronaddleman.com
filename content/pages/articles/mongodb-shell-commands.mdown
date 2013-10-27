@@ -144,29 +144,3 @@ function () {
 }
 
 
-{
-  "_id" : ObjectId("5245ce4ced716415663fa0a8"),
-  "startdate" : ISODate("2013-09-27T18:27:51.116Z"),
-  "starturl" : "http://local.frbsf.org",
-  "data" : [
-    {
-      "url" : "http://staging.frbsf.org/our-district/about/",
-      "md5" : "123"
-    },
-    {
-      "url" : "http",
-      "md5" : "456"
-    }
-  ]
-}
-
-
-db.local.find(
-{
-  "data" : {
-    "$elemMatch" : {
-      "url" : "http://staging.frbsf.org/our-district/about/",
-    }
-  }
-}
-)
