@@ -1,0 +1,38 @@
+Date: 24 October, 2013
+Categories: categories/javascript
+Flags: draft
+
+# Everything I know about JavaScript
+
+## JavaScript and XHTML
+
+The most legit way to embed JavaScript into an XHTML document without confusing web browsers
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+      JavaScript code here
+    //--><!]]></script>
+
+or
+
+    <a href="evil.html" onclick="JavaScript code here">
+
+## JavaScript and HTML
+
+    <script type="text/javascript">
+      JavaScript code here
+    </script>
+
+## JavaScript in separate files
+
+    <script type="text/javascript" src="script.js"></script>
+    <a href="evil.html" class="warning">
+
+## JavaScript libraries
+
+1. [Prototype](http://www.prototypejs.org/)
+1. [script.aculo.us](http://script.aculo.us/)
+1. [Yahoo! User Interface Library (YUI)](http://developer.yahoo.com/yui/)
+1. [Dojo](http://dojotoolkit.org/)
+1. [jQuery](http://jquery.com/)
+1. [MooTools](http://mootools.net/)
+
