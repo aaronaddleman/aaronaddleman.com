@@ -1,5 +1,5 @@
 set :application, "aaronaddleman.com"
-set :repository,  "git@www.squaron.net:aaronaddleman"
+set :repository,  "git@aaronaddleman.com:aaronaddleman"
 set :scm, :git
 set :keep_releases, 15
 set :deploy_via, :remote_cache
@@ -10,8 +10,8 @@ set :remote_user, 'deployer'
 set :deploy_to, "/apps/#{application}"
 
 
-role :web, "www.squaron.net"                          # Your HTTP server, Apache/etc
-role :app, "www.squaron.net"                          # This may be the same as your `Web` serve r
+role :web, "aaronaddleman.com"                          # Your HTTP server, Apache/etc
+role :app, "aaronaddleman.com"                          # This may be the same as your `Web` serve r
 # role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
 
@@ -32,9 +32,9 @@ end
 
 namespace :sync do
   task :content do
-    system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+    system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@aaronaddleman.com:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
     if prompt_y_n("Proceed? (y/n)")
-      system("rsync -vrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@www.squaron.net:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
+      system("rsync -vrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@aaronaddleman.com:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
     end
   end
 end
