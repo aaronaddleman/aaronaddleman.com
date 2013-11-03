@@ -1,0 +1,5 @@
+Categories: categories
+
+# NodeJS
+
+> Node.js is a software platform that is used to build scalable network (especially server-side) applications. Node.js utilizes JavaScript as its scripting language, and achieves high throughput via non-blocking I/O and a single-threaded event loop.
