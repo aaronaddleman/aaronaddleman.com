@@ -1,0 +1,9 @@
+Date: 5 Nov, 2013
+Categories: categories/sysadmin
+
+# Query system for KB patch information
+
+To query a windows system for KB patch information the following command line is very helpful:
+
+    wmic qfe get hotfixid | find "KB99999"
+    wmic qfe | find "KB99999"
