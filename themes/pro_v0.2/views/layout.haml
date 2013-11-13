@@ -20,6 +20,7 @@
     %link(href="#{url('/articles.xml')}" rel="alternate" type="application/atom+xml")
   %body
     = haml :tagmanager, :layout => false
+    = haml :segmentio, :layout => false
     #container
       = haml :header, :layout => false
       = yield
