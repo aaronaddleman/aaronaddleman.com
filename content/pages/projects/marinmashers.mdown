@@ -1,0 +1,6 @@
+Categories: projects, categories/wordpress
+Flags: draft
+
+# Social website for Home Brewers
+
+While attending some meetings for a club about home brewing beer, there came a need for enhancing our communications and scheduling of events. I volunteered and created a WordPres site and utilized BuddyPress and BBPress (along with some other plugins) to help. The site is named [Marin Mashers](http://marinmashers.com).
