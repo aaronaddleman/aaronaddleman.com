@@ -1,5 +1,6 @@
 Date: 5 Nov, 2013
 Categories: categories/sysadmin
+Summary: Want to know if a patch exists on your Windows system and when it was installed? This command has helped me out many times but is not that easy to remember due to my selfish reasons to use Linux.
 
 # Query system for KB patch information
 

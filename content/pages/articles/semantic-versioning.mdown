@@ -1,5 +1,6 @@
 Date: 30 October, 2013
 Categories: categories/sysadmin
+Summary: When making changes to code, I suggest using a organized method for the versioning. Thanks to Tom Preston-Werner, who has put some time into this topic and helped us out.
 
 # Semantic Versioning
 
