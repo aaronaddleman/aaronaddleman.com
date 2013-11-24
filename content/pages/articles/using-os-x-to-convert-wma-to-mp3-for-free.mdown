@@ -1,0 +1,30 @@
+Date: 00:00, 28 July 2010
+Categories: categories/osx
+
+# Using VLC to Convert WMA to MP3 for free 
+
+## My History with VLC
+
+I rarely need to convert files on my Mac, but when I do, I seem to think I have to find some type of weird audio program to help. My usual pattern to solve this problem was to go onto google.com and put in "convert wma to mp3" and hope for the best. But tonight was different. While playing around with the program VLC, I noticed a menu item that I have never used before: "Streaming/Exporting Wizard". This option allows for doing just as it suggests, but after playing around with some options, I found out that VLC can convert WMA files to MP3 files!
+
+## Here are the steps
+
+* Open the WMA file(s) in VLC
+* Goto File -&gt; Streaming/Export Wizard
+* Choose "Transcode/Save to file" and click Next
+* Choose "Existing playlist item" and highlight the items you want converted and click Next
+* Because I was converting audio, I used the "Transcode audio" option
+* Set the codec to "MP3" and choose your bitrate (I went with default of 192) and click Next
+* Set your encapsulation to "RAW" and click Next
+* Set your destination directory and click Next and it should start converting!
+
+## Using Automator to rename
+
+Afterwards I used Automator to rename my files from "Song Title.wma.raw" to "Song Title.mp3" by:
+
+* Dragging the audio files onto Automator
+* Adding "Rename Finder Items"
+* Set the operation of the "Rename Finder Items" to "Replace Text"
+* Find = .wma.raw
+* Replace = .mp3
+* Click Run!
