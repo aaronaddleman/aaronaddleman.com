@@ -1,5 +1,5 @@
 Date: 00:00, 28 July 2010
-Categories: categories/osx
+Categories: categories/os-x
 
 # Using VLC to Convert WMA to MP3 for free 
 
