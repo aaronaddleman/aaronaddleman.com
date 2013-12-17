@@ -18,6 +18,41 @@ I rarely need to convert files on my Mac, but when I do, I seem to think I have 
 * Set your encapsulation to "RAW" and click Next
 * Set your destination directory and click Next and it should start converting!
 
+## Update - Dec 12, 2013
+
+Here are some screen shots of the steps I took and I also noticed that the converted file did not appear until I played the song. Good Luck !!
+
+### Step 1
+![revolunet logo](/attachments/vlc_step1.png "revolunet logo")
+
+### Step 2
+![revolunet logo](/attachments/vlc_step2.png "revolunet logo")
+
+### Step 3
+![revolunet logo](/attachments/vlc_step3.png "revolunet logo")
+
+### Step 4
+![revolunet logo](/attachments/vlc_step4.png "revolunet logo")
+
+### Step 5
+![revolunet logo](/attachments/vlc_step5.png "revolunet logo")
+
+### Step 6
+![revolunet logo](/attachments/vlc_step6.png "revolunet logo")
+
+### Step 7
+![revolunet logo](/attachments/vlc_step7.png "revolunet logo")
+
+### Step 8
+![revolunet logo](/attachments/vlc_step8.png "revolunet logo")
+
+### Step 9
+![revolunet logo](/attachments/vlc_step9.png "revolunet logo")
+
+## Downloads
+
+
+
 ## Using Automator to rename
 
 Afterwards I used Automator to rename my files from "Song Title.wma.raw" to "Song Title.mp3" by:
