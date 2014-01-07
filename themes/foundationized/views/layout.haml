@@ -8,8 +8,9 @@
       %meta(name="keywords" content=@keywords)
     %title= @title
     <!--[if ! lte IE 6]><!-->
-    %link(href="#{url('/foundationized/css/foundation.css')}" media="screen" rel="stylesheet")
-    %link(href="#{url('/foundationized/css/normalize.css')}" media="screen" rel="stylesheet")
+    %link(href="#{url('/css/master.css')}" media="screen" rel="stylesheet")
+    / %link(href="#{url('/foundationized/css/foundation.css')}" media="screen" rel="stylesheet")
+    / %link(href="#{url('/foundationized/css/normalize.css')}" media="screen" rel="stylesheet")
     %link(href="/css/uv_themes/eiffel.css" media="screen" rel="stylesheet")
     %link{:src => "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"}
     %script{:src => "/foundationized/js/vendor/custom.modernizr.js"}
@@ -23,9 +24,13 @@
     %link(href="#{url('/articles.xml')}" rel="alternate" type="application/atom+xml")
   %body
     = haml :tagmanager, :layout => false
-    #container
+    .row
       = haml :header, :layout => false
+    .row
+      = haml :breadcrumbs, :layout => false
+    .row
       = yield
+    .row
       = haml :footer, :layout => false
     :plain
       <script>

@@ -15,5 +15,9 @@ module Nesta
     end
 
     # Add new routes here.
+    get '/css/:sheet.css' do
+      content_type 'text/css', :charset => 'utf-8'
+      cache scss(params[:sheet].to_sym)
+    end
   end
 end
