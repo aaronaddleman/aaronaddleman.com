@@ -38,6 +38,13 @@ When you want to find the document you made, the following command will help wit
 
     db.foo.find({"bar" : "baz"})
 
+### finding the document when the collection has special characters
+
+When your collection has special characters the following command helps find the documents:
+
+    db["foo-bar-zebo"].find()
+    db["foo-bar-zebo"].find({"bar" : "baz"})
+
 ### removing all documents from a collection
 
 Clearing out all of the documents from a collection can be done with the following:
