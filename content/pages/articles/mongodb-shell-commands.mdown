@@ -119,35 +119,6 @@ Data set:
 
 
 
-compareCollections = function(){
-    db["report-staging-1379454826"].find().forEach(function(obj1){
-        db["report-staging-1379450932"].find({}).forEach(function(obj2){
-            equals = function(o1, o2){
-              print(o1);
-              print(o2);
-            };
+### Find all records and return a specific field
 
-            if(equals(ob1, obj2)){
-            }
-        });
-    });
-};
-
-db.eval(compareCollections);
-
-function () { 
-  db.localone.find().forEach(function(obj1){ 
-    db.localtwo.find().forEach(function(obj2){ 
-      var equals = function(o1, o2){ 
-        print(o1); 
-        print(o2); 
-      }; 
-      if(equals(obj1, obj2)){
-        print(obj1);
-        print(obj2); 
-      } 
-    }); 
-  }); 
-}
-
-
+db["collection"].find( { "url" : { "$exists" : true }}, {url:1} )
