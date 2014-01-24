@@ -1,16 +1,15 @@
 - unless page.categories.empty?
   - unless @page.path =~ /^categories.*/
-    %h6
-      %p.meta
-        Published
-        - if page.date
-          on
-          %time(datetime="#{page.date.to_s}" pubdate=true)= format_date(page.date)
-        - unless page.categories.empty?
-          in
-          - page.categories.each do |category|
-            - if category != page.categories[-1]
-              = succeed ',' do
-                %a(href="#{url(category.abspath)}")= category.heading
-            - else
+    %h6.meta
+      Published
+      - if page.date
+        on
+        %time(datetime="#{page.date.to_s}" pubdate=true)= format_date(page.date)
+      - unless page.categories.empty?
+        in
+        - page.categories.each do |category|
+          - if category != page.categories[-1]
+            = succeed ',' do
               %a(href="#{url(category.abspath)}")= category.heading
+          - else
+            %a(href="#{url(category.abspath)}")= category.heading
