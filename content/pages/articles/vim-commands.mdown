@@ -1,0 +1,24 @@
+Date: 24, Jan 2014
+Categories: categories/sysadmin
+Summary: VIm is a great editor and I have used it for many years. However, mastering the indepth commands are very helpful for System Administrators because its almost always available. Here are some helpful commands to remember.
+
+# VIm commands
+
+## Saving changes to a file
+
+<kbd>Shift</kbd> + <kbd>:</kbd> write
+
+or
+
+<kbd>Shift</kbd> + <kbd>:</kbd> w
+
+or
+
+<kbd>Z</kbd> <kbd>Z</kbd>
+
+## Quiting vim
+
+    :quit
+    (or)
+    :q
+
