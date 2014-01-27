@@ -1,5 +1,4 @@
 Categories: projects, categories/wordpress
-Flags: draft
 
 # Social website for Home Brewers
 

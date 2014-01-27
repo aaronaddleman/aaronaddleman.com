@@ -1,0 +1,185 @@
+hml5 notes
+
+http://docs.webplatform.org/wiki/guides/html_structural_elements
+
+<header>: Used to contain the header content of a site.
+<footer>: Contains the footer content of a site.
+<nav>: Contains the navigation menu, or other navigation functionality for the page.
+<article>: Contains a standalone piece of content that would make sense if syndicated as an RSS item, for example a news item.
+<section>: Used to either group different articles into different purposes or subjects, or to define the different sections of a single article.
+<aside>: Defines a block of content that is related to the main content around it, but not central to the flow of it.
+
+
+<body>
+ 
+  <header>
+    <!-- header content goes in here -->
+  </header>
+ 
+  <nav>
+    <!-- navigation menu goes in here -->
+  </nav>
+ 
+  <section id="sidebar1">
+    <!-- sidebar content goes in here -->
+  </section>
+ 
+  <section id="main">
+    <!-- main page content goes in here -->
+
+    <article>
+      <header>
+        element contains a logo image
+      </header>
+
+      <section id="introduction">
+      </section>
+     
+      <section id="content">
+      </section>
+     
+      <section id="summary">
+      </section>
+
+      <footer>
+        element contains a copyright notice
+      </footer>
+    </article>
+ 
+  </section>
+ 
+  <aside>
+    <!-- aside content goes in here -->
+  </aside>
+ 
+  <footer>
+    <!-- footer content goes in here -->
+  </footer>
+ 
+</body>
+
+foundation themes.html
+
+<!-- Nav Bar -->
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+     <ul class="button-group">
+       <li><a href="#" class="button">Link 1</a></li>
+       <li><a href="#" class="button">Link 2</a></li>
+       <li><a href="#" class="button">Link 3</a></li>
+       <li><a href="#" class="button">Link 4</a></li>
+      </ul>
+    </div>
+    <h1>Blog <small>This is my blog. It's awesome.</small></h1>
+    <hr />
+  </div>
+</div>
+
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+  <!-- Main Blog Content -->
+  <div class="large-9 columns" role="content">
+
+    <article>
+
+      <h3><a href="#">Blog Post Title</a></h3>
+      <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
+          <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+        </div>
+        <div class="large-6 columns">
+          <img src="http://placehold.it/400x240&text=[img]" />
+        </div>
+      </div>
+
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+
+    </article>
+
+    <hr />
+
+    <article>
+
+      <h3><a href="#">Blog Post Title</a></h3>
+      <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
+          <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+        </div>
+        <div class="large-6 columns">
+          <img src="http://placehold.it/400x240&text=[img]" />
+        </div>
+      </div>
+
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+
+    </article>
+
+  </div>
+
+  <!-- End Main Content -->
+
+
+  <!-- Sidebar -->
+
+  <aside class="large-3 columns">
+
+    <h5>Categories</h5>
+    <ul class="side-nav">
+      <li><a href="#">News</a></li>
+      <li><a href="#">Code</a></li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Fun</a></li>
+      <li><a href="#">Weasels</a></li>
+    </ul>
+
+    <div class="panel">
+      <h5>Featured</h5>
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+      <a href="#">Read More →</a>
+    </div>
+
+  </aside>
+
+  <!-- End Sidebar -->
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr />
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
