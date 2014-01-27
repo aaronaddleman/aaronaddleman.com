@@ -1,0 +1,50 @@
+// @import "colors.scss";
+@import "settings.scss";
+@import "foundation.scss";
+
+// custom css
+article h1,hgroup h1 {
+  text-shadow: 0 2px 3px #dddddd;
+}
+
+pre {
+  border: 1px solid #EAEAEA;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  background-color: #FFFFFF;
+  border: solid 1px #ccc;
+  background-color: #efefef;
+  color: #000000;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap !important;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  width: 99%;
+  word-wrap: break-word;
+  padding: 0.875em 1em;
+  overflow: auto;
+  display: block;
+  font-family: monospace;
+  line-height: 1.75em;
+  margin-bottom: 1em;
+}
+
+h6.meta {
+  // margin-top: 0.19252em;
+  // margin-bottom: 3.65787em;
+  line-height: 1.92519em;
+  font-size: 90.9%;
+  font-style: italic;
+  color: #87877d;
+}
+
+a {
+  // border-bottom: 1px dotted #006dd1;
+  text-decoration: none;
+  color: #006dd1;
+  -moz-transition: color 0.25s 0 ease;
+  -o-transition: color 0.25s 0 ease;
+  -webkit-transition: color 0.25s 0 ease;
+  transition: color 0.25s 0 ease;
+}
