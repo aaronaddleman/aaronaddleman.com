@@ -5,6 +5,11 @@ Categories: categories/puppet
 
 ## Simple and helpful commands
 
+### To display the current version installed
+
+    :::shell
+    puppet -V
+    
 ### To run the agent and see debug information
 
     :::shell

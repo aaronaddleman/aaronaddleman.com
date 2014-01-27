@@ -1,0 +1,7 @@
+Categories: categories
+
+# Zimbra
+
+From Zimbra's website:
+
+> Zimbra is an enterprise-class email, calendar and collaboration solution, built for the cloud, both public and private. With a redesigned browser-based interface, Zimbra offers the most innovative messaging experience available today, connecting end users to the information and activity in their personal clouds.

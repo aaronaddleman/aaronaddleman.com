@@ -1,0 +1,11 @@
+Date: 18 Dec, 2013
+Categories: categories/zimbra
+Summary: How to resolve the error message "Unable to determain services from ldap"
+
+# Zimbra error message "Unable to determain services from ldap"
+
+At some point, you might get this error message with Zimbra (I hope you don't experience this problem) and the problem is that the certificate is not valid. The short solution for me was to check if Zimbra can use untrusted certs, and if that returns false, I can set the value to true and restart Zimbra. The longer fix would be to make a valid cert. Here are the commands to do the short fix:
+
+    :::shell
+    $ zmlocalconfig -s ssl_allow_untrusted_certs <-- checks status
+    $ zmlocalconfig -e ssl_allow_untrusted_certs=true; zmcontrol restart

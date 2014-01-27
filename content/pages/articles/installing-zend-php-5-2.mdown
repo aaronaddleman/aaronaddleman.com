@@ -1,0 +1,18 @@
+Date: 8 Jan, 2013
+Categories: categories/php, categories/sysadmin
+
+# Installing PHP 5.2 on CentOS 5.x (with either Zend or by Source)
+
+This is really only for my own personal sakes to keep a note of what is needed for installing Zend PHP 5.2 onto Centos 5.x:
+
+## Make a file /etc/yum.repos.d/zend.repo
+
+Make a file with the following contents:
+
+# Installing from Source
+
+## Install the following packages
+
+    :::shell
+    yum install gcc compat-readline5 compat-libtermcap mysql-devel httpd-devel curl-devel libxml2-devel libpng-devel openssl-devel pcre-devel libjpeg-devel libpng-devel freetype-devel openssl-devel zlib-devel rpm-build readline-devel
+

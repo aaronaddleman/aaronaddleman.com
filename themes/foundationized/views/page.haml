@@ -1,22 +1,17 @@
-%nav.breadcrumb
-  - display_breadcrumbs unless @page.title == "Home"
-
-/ .toc= toc(@page)
-#content
+#content.large-8.columns
   %article(role="main")
     ~ @page.to_html(self)
-
-    %section.pages
-      = article_summaries(@page.pages)
-
+    - unless @page.pages.empty?
+      %section.pages
+        %hr
+        %h1= pages_heading
+        = article_summaries(@page.pages)
     - unless @page.articles.empty?
       %section.articles
         %header
           %h1= articles_heading
         = article_summaries(@page.articles)
-
     = haml :page_meta, :layout => false, :locals => { :page => @page }
-
   = haml :comments, :layout => false
-
-= haml :sidebar, :layout => false
+#content.large-4.columns
+  = haml :sidebar, :layout => false

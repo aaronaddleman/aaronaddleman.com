@@ -2,13 +2,15 @@
   - pages.each do |page|
     %article
       %header
-        %h1
+        %h3
           %a(href="#{url(page.abspath)}")= page.heading
-      - if page.summary.nil? || page.summary.empty?
-        ~ page.body(self)
-        / ~ page.title(self)
-      - else
-        ~ page.summary
-        %p.read_more
-          %a(href="#{url(page.abspath)}")= page.read_more
-      = haml :page_meta, :layout => false, :locals => { :page => page }
+        = haml :page_meta, :layout => false, :locals => { :page => page }
+      
+        - if page.summary.nil? || page.summary.empty?
+          ~ page.body(self)
+          / ~ page.title(self)
+        - else
+          ~ page.summary
+          %p.read_more
+            %a(href="#{url(page.abspath)}")= page.read_more
+  %hr
