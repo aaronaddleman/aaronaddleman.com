@@ -14,8 +14,19 @@ require 'nokogiri'
 # require "rack/pygments"
 
 require 'date'
+require 'json'
 
 module Nesta
+  module Overrides
+    module Renderers
+      def json(template, options = {}, locals = {})
+        defaults, engine = Overrides.render_options(template, :haml)
+        renderer = Sinatra::Templates.instance_method(engine)
+        renderer.bind(self).call(template, defaults.merge(options), locals)
+      end
+    end
+  end
+
   class App
     Tilt.prefer Tilt::RedcarpetTemplate
     # Uncomment the Rack::Static line below if your theme has assets
@@ -103,5 +114,19 @@ module Nesta
       cache haml(@page.template, :layout => @page.layout)
       
     end
+
+    get '/feed/:name.json' do
+      # content_type :xml, :charset => 'utf-8'
+      set_from_config(:title, :subtitle, :author)
+      # @articles = Page.find_articles.select { |a| a.date }[0..9]
+      @articles = Page.find_articles
+      cache haml(:all, :format => :xhtml, :layout => false)
+    end
+
+    get '/example.json' do
+      content_type :json
+      { :key1 => 'value1', :key2 => 'value2' }.to_json
+    end
+
   end
 end
