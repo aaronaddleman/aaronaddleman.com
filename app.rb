@@ -17,6 +17,12 @@ require 'date'
 require 'json'
 
 module Nesta
+  class FileModel
+    def updates
+      JSON.parse(metadata('updates'))
+    end
+  end
+
   module Overrides
     module Renderers
       def json(template, options = {}, locals = {})
