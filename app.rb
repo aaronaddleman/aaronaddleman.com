@@ -19,7 +19,7 @@ require 'json'
 module Nesta
   class FileModel
     def updates
-      JSON.parse(metadata('updates'))
+      JSON.parse(metadata('updates')) unless metadata('updates') == nil
     end
   end
 

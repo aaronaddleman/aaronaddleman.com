@@ -12,7 +12,7 @@
           %h1= articles_heading
         = article_summaries(@page.articles)
     = haml :page_meta, :layout => false, :locals => { :page => @page }
-    - unless @page.metadata('updates') == ''
+    - unless @page.metadata('updates') == nil
       %section.panel.callout.radius
         %h5 Updates
         - @page.updates.each do |k,v|
