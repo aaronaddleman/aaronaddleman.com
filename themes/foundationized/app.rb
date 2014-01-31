@@ -26,7 +26,11 @@ module Nesta
     helpers do
       # Add new helpers here.
       def pages_heading
-        @page.metadata('projects heading') || "Pages on #{@page.heading}"
+        # @page.metadata('projects heading') || "#{@page.heading}"
+        @page.metadata('projects heading')
+
+        # ... projects
+        # ... wordpress
       end
     end
 
