@@ -1,5 +1,6 @@
 Date: 10 May, 2012
 Categories: categories/bash, categories/sysadmin
+Updates: { "1": {"date" : "30 Jan, 2014", "desc" : "Changed steps for using rvm with dedicated user."}  }
 Summary: The steps that I took for setting up the Nestacms with passenger, RVM, and Apache on a hosting server.
 
 # Nestacms with passenger, rvm, apache
@@ -12,47 +13,65 @@ To get Nesta to be served from Apache with Passenger.
 
 About a couple months ago, I came across Nesta which is really awesome and really simple CMS built off the Sinatra framework. But I could not figure out how to host the application with Apache. Fast forward to this evening and I finally found a solution. If you have any suggestions on how it could be done different, please post a comment as I would like to hear about it.
 
+This is a great setup because it allows for being very flexible between ruby versions, gem version, and your application code.
+
 ## Build
 
 So! you want to build it. Ok, here are the steps I did:
 
- 1. Install RVM and Ruby (I ended up with the single user install as you will notice)
- 1. curl -L get.rvm.io | bash -s stable
- 1. rvm requirements
- 1. (install necessary stuff to compile ruby and gems)
- 1. rvm install 1.9.2
- 1. rvm use –default 1.9.2
- 1. Install Nesta
- 1. gem install nesta
- 1. Create your site home and site itself
- 1. mkdir /apps
- 1. cd /apps
- 1. nesta new mysite
- 1. (take note that all additional steps use “/apps/mysite” as the nesta directory)
- 1. Install Passenger
- 1. gem install passenger
- 1. passenger-install-apache2-module
- 1. Apache config
- 1. mkdir /etc/httpd/sites-available /etc/httpd/sites-enabled /etc/httpd/mods-available /etc/httpd/mods-enabled
- 1. Create the file /etc/httpd/mods-available/passenger.conf (see git gist below)
- 1. Create the file /etc/httpd/sites-available/mysite (see git gist below)
- 1. cd /etc/httpd/sites-enabled
- 1. ln -s ../sites-available/mysite mysite
- 1. cd /etc/httpd/mods-enabled
- 1. ln -s ../mods-available/passenger.conf passenger.conf
- 1. turn on NameVirtualHosts feature
- 1. sudo /etc/init.d/httpd restart
- 1. goto your new site!
- 1. SetEnv LD_LIBRARY_PATH /home/aaron/.rvm/rubies/ruby-1.9.2-p320/lib
- 1. SetEnv GEM_PATH /home/aaron/.rvm/gems/ruby-1.9.2-p320:/home/aaron/.rvm/gems/ruby-1.9.2-p320@global
+## Summary
 
-Next, put the following into your Apache configuration:
+ - Add a new user to manage rvm
+ - Allow rvmuser to sudo to higher privledges
+ - Open other terminal as root and install any packages needed
+ - Switch shell to the user and install rvm as single user
+ - Unpack application
+ - Set permissions of application to be same as rvm user
+ - Configure Apache files
+ - Restart service(s)
+ 
+## The installation
+
+### rvmuser
+
+All of the commands are to be used in the terminal and will, in general, be creating a dedicated user called "rvmuser" (but you can choose what ever you want). This is nice as the rvm software will not be globally installed and subject potential security vulnerabilities. **There is one part below where you might want to consider installing the passenger gem in the default gemset instead of inside a separate gemset if you would like to use multiple gemsets with multiple applications.**
+
+    :::shell
+    adduser rvmuser
+    passwd rvmuser
+    visudo
+    (... enable wheel group to use root commands ...)
+    (add rvmuser to wheel group)
+    cd /apps/mysite
+    chown -R rvmuser:rvmuser *
+    su rvmuser --login
+    \curl -L get.rvm.io | bash -s stable
+    rvm install 1.9.4
+    rvm use --default 1.9.4
+    rvm gemset create nesta
+    gem install passenger
+    rvmsudo passenger-install-apache2-module
+    exit
+    cd /apps/mysite
+    bundle install
+
+### Apache configuration
+
+Create the directory and apache files
+
+    :::shell
+    mkdir /etc/httpd/sites-available
+    vi /etc/httpd/sites-available/mysite.conf
+
+Apache configuration example. Take note of the `@nesta` portion towards the end which references your gemset.
 
     :::apache-config
-    LoadModule passenger_module /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12/ext/apache2/mod_passenger.so
-    PassengerRoot /home/aaron/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12
-    PassengerRuby /home/aaron/.rvm/rubies/ruby-1.9.2-p320/bin/ruby
-  
+    LoadModule passenger_module /home/rvmuser/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12/ext/apache2/mod_passenger.so
+    PassengerRoot /home/rvmuser/.rvm/gems/ruby-1.9.2-p320/gems/passenger-3.0.12
+    PassengerRuby /home/rvmuser/.rvm/rubies/ruby-1.9.2-p320/bin/ruby  
+    SetEnv LD_LIBRARY_PATH /home/rvmuser/.rvm/rubies/ruby-1.9.2-p320/lib
+    SetEnv GEM_PATH /home/rvmuser/.rvm/gems/ruby-1.9.2-p320:/home/rvmuser/.rvm/gems/ruby-1.9.2-p320@nesta
+
     <VirtualHost *:80>
       ServerName centos
       # !!! Be sure to point DocumentRoot to "public"

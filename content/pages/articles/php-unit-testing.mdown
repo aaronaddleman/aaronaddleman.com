@@ -1,0 +1,8 @@
+Date: 28 Jan, 2014
+Categories: categories/php
+Flags: draft
+
+# PHP Unit testing
+
+http://www.slideshare.net/dpc/quality-assurance-in-php-projects-sebastian-bergmann
+
