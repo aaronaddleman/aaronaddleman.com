@@ -1,5 +1,6 @@
 Date: 10 September, 2013
 Categories: categories/ruby, categories/sysadmin
+Updates: { "1": {"date" : "29 Jan, 2014", "desc" : "Added build compile command for PHP version 5.5.8." } }
 Summary: Do not waste your time with trying to build a custom package (e.g. rpm) and use 'fpm' instead.
 
 # Building packages with `fpm`
@@ -32,6 +33,13 @@ In step 1 we download the zip file from PHPs website and extract in step 2, then
 
 ## php 5.5.2 custom build
     './configure' '--prefix=/usr/local/php-5.5.2' '--with-config-file-path=/usr/local/php-5.5.2/etc' '--with-config-file-scan-dir=/usr/local/php-5.5.2/etc/conf.d' '--disable-debug' '--enable-inline-optimization' '--disable-all' '--enable-libxml' '--enable-session' '--enable-spl' '--enable-xml' '--enable-hash' '--enable-reflection' '--with-pear' '--with-apxs2=/usr/sbin/apxs' '--with-layout=GNU' '--enable-filter' '--with-pcre-regex' '--with-zlib=/usr' '--enable-simplexml' '--enable-dom' '--with-libxml-dir=/usr/local/libxml2-2.7.7' '--with-openssl' '--enable-pdo' '--with-pdo-sqlite' '--with-readline=/usr/local/readline-5.2' '--with-iconv' '--with-sqlite3' '--disable-phar' '--enable-xmlwriter' '--enable-xmlreader' '--with-mysql'
+
+## php 5.5.8 custom build
+    './configure' '--prefix=/usr/local/php-5.5.8' '--with-config-file-path=/usr/local/php-5.5.8/etc' '--with-config-file-scan-dir=/usr/local/php-5.5.8/etc/conf.d' '--disable-debug' '--enable-inline-optimization' '--disable-all' '--enable-libxml' '--enable-session' '--enable-spl' '--enable-xml' '--enable-hash' '--enable-reflection' '--with-pear' '--with-apxs2=/usr/sbin/apxs' '--with-layout=GNU' '--enable-filter' '--with-pcre-regex' '--with-zlib=/usr' '--enable-simplexml' '--enable-dom' '--with-libxml-dir=/usr/local/libxml2-2.7.7' '--with-openssl' '--enable-pdo' '--with-pdo-sqlite' '--with-readline=/usr/local/readline-5.2' '--with-iconv' '--with-sqlite3' '--disable-phar' '--enable-xmlwriter' '--enable-xmlreader' '--with-mysql'
+
+## fpm for 5.5.8
+
+    fpm -s dir -t rpm -n php-fpm -v 5.5.8 -C /tmp/installdir -p php-fpm_VERSION_ARCH.rpm -d openssl -d pcre -d bzip2 -d curl -d libjpeg -d libpng -d freetype -d gmp -d libxml2 usr
 
 ## php 5.3.2 custom build 64bit
 
