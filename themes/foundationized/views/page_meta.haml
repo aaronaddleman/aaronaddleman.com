@@ -1,5 +1,5 @@
 - unless page.categories.empty?
-  - unless @page.path =~ /^categories.*/
+  - unless @page.path =~ /^categories$/
     %h6.meta
       Published
       - if page.date
