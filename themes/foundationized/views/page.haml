@@ -16,13 +16,15 @@
       %section.panel.callout.radius
         %h5 Updates
         - @page.updates.each do |k,v|
+          %hr
           %div
-            %span
-              = v["date"]
-            %span
-              &mdash;
-            %span
-              = v["desc"]
+            %p
+              %span
+                = v["date"]
+              %span
+                &mdash;
+              %span
+                = v["desc"]
 
   = haml :comments, :layout => false
 #content.large-4.columns

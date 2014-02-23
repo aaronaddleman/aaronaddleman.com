@@ -5,7 +5,7 @@ Summary: Today I learned a great combination of shortcuts that can be used in Su
 # Multiple Line Editing with Sublime Text 2
 This morning I almost yelled out "that is so @#%*ing awesome" at work because the multiple line editing in Sublime Text 2 is so cool. I was able to select some text across multiple lines, delete the right side, then select the left side of text and paste to the right! Below are the notes of what I found out about this amazing setup.
 
-# The situation
+## The situation: multiple line editing
 
 I was making a Puppet module in Sublime Text 2 and had the following code:
 
@@ -49,3 +49,12 @@ Here are my steps:
 10. Copy the text of each line to the copy buffer: `Cmd + C`
 11. Move the cursor to the end of each line by using: `Cmd + Right Arrow`
 12. Insert a space and paste the code: `Cmd + v`
+
+## Selective multiple line editing
+
+Double click on pattern
+Cmd + D to select the next match
+
+## Edit multiple lines very fast
+
+Highlight all of the lines and hit Cmd + Shift + L
