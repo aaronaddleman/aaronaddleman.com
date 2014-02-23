@@ -1,4 +1,4 @@
-#content.large-8.columns
+#main.large-8.columns
   %article(role="main")
     ~ @page.to_html(self)
     - unless @page.pages.empty?
@@ -7,11 +7,13 @@
         %h1= pages_heading
         = article_summaries(@page.pages)
     - unless @page.articles.empty?
-      %section.articles
+      %article(itemscope=true itemtype="http://schema.org/BlogPosting")
         %header
-          %h1= articles_heading
+          %h1(itemprop="headline")= articles_heading
+          %p
+            = haml :page_meta, :layout => false, :locals => { :page => @page }
         = article_summaries(@page.articles)
-    = haml :page_meta, :layout => false, :locals => { :page => @page }
+    
     - unless @page.metadata('updates') == nil
       %section.panel.callout.radius
         %h5 Updates
@@ -27,5 +29,5 @@
                 = v["desc"]
 
   = haml :comments, :layout => false
-#content.large-4.columns
+#nav.large-4.columns
   = haml :sidebar, :layout => false
