@@ -2,8 +2,9 @@
 
 # Summary
 
-I have been working with computers for over 15 years now and been self taught. Mostly engaged in UNIX or Linux systems and somewhat with MS Windows. My goals are to support a infrastructure with the knowledge and expertise that I have gained from being a systems administrator while improving security and methods of data storage or access.
-I really enjoy using Ruby on Rails to make strong web applications. Each time I learn something new in Rails, its great feeling where I want to do more!
+Great projects are completed with a team that has communication, necessary tools, and a leader who understands requirements. I am a self taught computer geek and long time System/Network Administrator with a thirst for taking my knowledge and passion into a Dev Ops role. While studying programming languages and styles I enjoy staying with current trends of the world around me and sharing with others.
+
+Do you have a position which would help me explore my talents into new heights with your company?
 
 # Specialties
 
