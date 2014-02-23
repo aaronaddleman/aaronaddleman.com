@@ -30,6 +30,12 @@ namespace :deploy do
   end
 end
 
+namespace :check do
+  task :site do, :roles => :app do
+    run("bash #{deploy_to}/current/content/attachments/scripts/check_site.sh > /dev/null 2>&1")
+  end
+end
+
 namespace :sync do
   task :content do
     system("rsync -nvrltoDzO --progress --exclude-from 'exclude.txt' --delete-after -e ssh rvmuser@direct.aaronaddleman.com:/apps/aaronaddleman.com/current/* /Users/aaron/Documents/Work/personal/aaronaddleman-squaron")
