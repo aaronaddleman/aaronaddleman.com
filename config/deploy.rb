@@ -31,7 +31,7 @@ namespace :deploy do
 end
 
 namespace :check do
-  task :site do, :roles => :app do
+  task :site, :roles => :app do
     run("bash #{deploy_to}/current/content/attachments/scripts/check_site.sh > /dev/null 2>&1")
   end
 end
