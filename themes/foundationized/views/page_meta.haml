@@ -4,7 +4,7 @@
       Published
       - if page.date
         on
-        %time(datetime="#{page.date.to_s}" itemprop="datePublished")= format_date(page.date)
+        %time{:itemprop => "datePublished", :datetime => page.date.to_s }= format_date(page.date)
       - unless page.categories.empty?
         in
         - page.categories.each do |category|
@@ -13,3 +13,6 @@
               %a(href="#{url(category.abspath)}")= category.heading
           - else
             %a(href="#{url(category.abspath)}")= category.heading
+      by
+      %span{:itemprop => "creator", :itemscope => true, :itemtype => "http://schema.org/Person"}
+        Aaron Addleman
