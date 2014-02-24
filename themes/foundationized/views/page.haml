@@ -4,7 +4,7 @@
     - unless @page.pages.empty?
       %section.pages
         %hr
-        %h1= pages_heading
+        %h1{:itemprop => "headline"}= pages_heading
         = article_summaries(@page.pages)
     - unless @page.articles.empty?
       %article(itemscope=true itemtype="http://schema.org/BlogPosting")
