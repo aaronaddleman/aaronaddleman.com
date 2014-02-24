@@ -1,19 +1,19 @@
 #main.large-8.columns
   %article(role="main")
     ~ @page.to_html(self)
+    = haml :page_meta, :layout => false, :locals => { :page => @page } unless url =~ /^categories\/.*/
     - unless @page.pages.empty?
       %section.pages
         %hr
-        %h1{:itemprop => "headline"}= pages_heading
+        %h3{:itemprop => "headline"}= pages_heading
         = article_summaries(@page.pages)
     - unless @page.articles.empty?
       %article(itemscope=true itemtype="http://schema.org/BlogPosting")
         %header
-          %h1(itemprop="headline")= articles_heading
+          %h3(itemprop="headline")= articles_heading
           %p
             = haml :page_meta, :layout => false, :locals => { :page => @page }
         = article_summaries(@page.articles)
-    
     - unless @page.metadata('updates') == nil
       %section.panel.callout.radius
         %h5 Updates
@@ -27,7 +27,6 @@
                 &mdash;
               %span
                 = v["desc"]
-
   = haml :comments, :layout => false
 #nav.large-4.columns
   = haml :sidebar, :layout => false
