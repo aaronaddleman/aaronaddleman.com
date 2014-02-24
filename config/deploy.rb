@@ -6,7 +6,7 @@ set :deploy_via, :remote_cache
 ssh_options[:user] = 'rvmuser'
 set :use_sudo, false
 default_run_options[:pty] = true
-set :remote_user, 'deployer'
+set :remote_user, 'rvmuser'
 set :deploy_to, "/apps/#{application}"
 
 
