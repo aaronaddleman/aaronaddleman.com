@@ -23,6 +23,12 @@ module Nesta
       @doc.to_html
     end
 
+    def schema_converter(str)
+      @doc = Nokogiri::XML::DocumentFragment.parse(str)
+      @doc.search('h1').map { |e| e['itemprop'] = 'headline'; e['id'] = 'headline' }
+      @doc.to_html
+    end
+
     helpers do
       # Add new helpers here.
       def pages_heading

@@ -1,6 +1,9 @@
 Date: 10 September, 2013
 Categories: categories/ruby, categories/sysadmin
-Updates: { "1": {"date" : "29 Jan, 2014", "desc" : "Added build compile command for PHP version 5.5.8." } }
+Updates:
+    1:
+        date: "29 Jan, 2014"
+        desc: "Added build compile command for PHP version 5.5.8."
 Summary: Do not waste your time with trying to build a custom package (e.g. rpm) and use 'fpm' instead.
 
 # Building packages with `fpm`

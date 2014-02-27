@@ -1,32 +1,35 @@
 #main.large-8.columns
-  %article(role="main")
-    ~ @page.to_html(self)
-    = haml :page_meta, :layout => false, :locals => { :page => @page } unless url =~ /^categories\/.*/
-    - unless @page.pages.empty?
-      %section.pages
+  %section{:role => "main", :itemscope => true, :itemtype => "http://schema.org/BlogPosting" }
+    ~ schema_converter(@page.to_html(self))
+    / ~ @page.to_html(self)
+  - unless @page.pages.empty?
+    %section.pages
+      %h1{:itemprop => "name"}= pages_heading
+      = article_summaries(@page.pages)
+  - unless @page.articles.empty?
+    %hr
+    %article(itemscope=true itemprop="blogPosts" itemtype="http://schema.org/BlogPosting")
+      %header
+        %h1(itemprop="name")= articles_heading
+      = article_summaries(@page.articles)
+  - unless @page.metadata('updates') == nil
+    %section.panel.callout.radius
+      %h2 Updates
+      - @page.updates.each do |k,v|
         %hr
-        %h3{:itemprop => "headline"}= pages_heading
-        = article_summaries(@page.pages)
+        %div
+          %p
+            %span
+              = v["date"]
+            %span
+              &mdash;
+            %span
+              = v["desc"]
 
-    - unless @page.articles.empty?
-      %hr
-      %article(itemscope=true itemtype="http://schema.org/BlogPosting")
-        %header
-          %h3(itemprop="headline")= articles_heading
-        = article_summaries(@page.articles)
-    - unless @page.metadata('updates') == nil
-      %section.panel.callout.radius
-        %h5 Updates
-        - @page.updates.each do |k,v|
-          %hr
-          %div
-            %p
-              %span
-                = v["date"]
-              %span
-                &mdash;
-              %span
-                = v["desc"]
-  = haml :comments, :layout => false
+  / = @page.metadata('yaml')
+
+  = haml :page_meta, :layout => false, :locals => { :page => @page } unless url =~ /^categories\/.*/
+
+= haml :comments, :layout => false
 #nav.large-4.columns
-  = haml :sidebar, :layout => false
+= haml :sidebar, :layout => false

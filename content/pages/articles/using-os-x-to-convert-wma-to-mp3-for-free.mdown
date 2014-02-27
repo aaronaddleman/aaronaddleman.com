@@ -1,6 +1,12 @@
 Date: 00:00, 28 July 2010
 Categories: categories/os-x
-Updates: { "1": {"date": "12 Dec, 2013", "desc": "Here are some screen shots of the steps I took and I also noticed that the converted file did not appear until I played the song. Good Luck!!"}, "2": {"date": "1 Feb, 2014", "desc": "A commenter asked about converting in batches. So far, I have not found a way to do this. Still looking for some options. Please comment if you have any suggestions."}}
+Updates:
+  1:
+    date: "12 Dec, 2013"
+    desc: "Here are some screen shots of the steps I took and I also noticed that the converted file did not appear until I played the song. Good Luck!!"
+  2:
+    date: "1 Feb, 2014"
+    desc: "A commenter asked about converting in batches. So far, I have not found a way to do this. Still looking for some options. Please comment if you have any suggestions."
 Summary: How to convert WMA files into MP3 for free using the open source program called VLC.
 
 # Using VLC to Convert WMA to MP3 for free 
