@@ -1,6 +1,9 @@
 Date: 10 May, 2012
 Categories: categories/bash, categories/sysadmin
-Updates: { "1": {"date" : "30 Jan, 2014", "desc" : "Changed steps for using rvm with dedicated user."}  }
+Updates:
+    1:
+        date: "30 Jan, 2014"
+        desc: "Changed steps for using rvm with dedicated user."
 Summary: The steps that I took for setting up the Nestacms with passenger, RVM, and Apache on a hosting server.
 
 # Nestacms with passenger, rvm, apache

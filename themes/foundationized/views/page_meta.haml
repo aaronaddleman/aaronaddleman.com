@@ -1,18 +1,18 @@
 - unless page.categories.empty?
   - unless @page.path =~ /^categories$/
-    %h6.meta
+    %h6.span
       Published
       - if page.date
         on
-        %time{:itemprop => "datePublished", :datetime => page.date.to_s }= format_date(page.date)
+        %time{:itemprop => "datePublished", :content => page.date.to_s }= format_date(page.date)
       - unless page.categories.empty?
         in
         - page.categories.each do |category|
           - if category != page.categories[-1]
             = succeed ',' do
-              %a(href="#{url(category.abspath)}")= category.heading
+              %a{:href => "#{url(category.abspath)}", :itemprop => 'articleSection'}= category.heading
           - else
-            %a(href="#{url(category.abspath)}")= category.heading
+            %a{:href => "#{url(category.abspath)}", :itemprop => 'articleSection' }= category.heading
       by
-      %span{:itemprop => "creator", :itemscope => true, :itemtype => "http://schema.org/Person"}
+      %a{:href => 'https://plus.google.com/+AaronAddleman‎?rel=author', :rel => 'author', :itemprop => 'author', :itemscope => '', :itemtype => 'http://schema.org/Person' }
         Aaron Addleman
