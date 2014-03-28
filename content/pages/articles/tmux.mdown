@@ -31,29 +31,29 @@ Press <kbd>q</kbd> to quit out of help. Will list all of the commands.
 
 Will allow you to type in a command and supports tab completion.
 
+## Simple stuff
+
+### Detaching
+
+`C-a d`
+
+### Reattaching
+
+    tmux attach
+    tmux attach-session
+
 ## Windows
 
-    C-a w
+`C-a w`     Allows you to choose a window interactively.
 
-Allows you to choose a window interactivly.
+`C-a n`     Moves to the next window.
 
-    C-a n
+`C-a p`     Moves to the previous window.
 
-Moves to the next window.
+`C-a x`     Kills the current pane with a prompt of yes or no.
 
-    C-a p
+`C-a {`     Swap current pane with the previous one.
 
-Moves tot he previous window.
+`C-a }`     Swap current pane with the next one.
 
-    C-a x
-
-Kills the current pane with a promnt of yes or no.
-
-    C-a {
-
-Swap current pane with the previous one.
-
-    C-a }
-
-Swap current pane with the next one.
-
+`C-a w`     List windows

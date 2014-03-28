@@ -1,10 +1,16 @@
 Date: 04 January 2013
 Categories: categories/sysadmin
 Summary: This took longer than it should have to get setup. For some reason, I could not find any references on how to get the dynamic zooming of munin to work. The documentation was not very helpful from the example provide (because it did not work) nor in ascertaining how to solve the problem. Anyways, here is my journey and configuration that will help me out the the future.
+Updates:
+    1:
+        date: "10 April, 2013"
+        desc: "Munin version 2.0.10 now includes better support for dynamic zooming out of the box"
+    2:
+        date: "14 Mar, 2014"
+        desc: "Added information of how to debug Munin"
+        
 
 # Howto install munin version 2.0.8 with dynamic graphs on Centos 6
-
-*Update 10 April, 2013:* Munin version 2.0.10 now includes better support for dynamic zooming out of the box.
 
 This took longer than it should have to get setup. For some reason, I could not find any references on how to get the dynamic zooming of munin to work. The documentation was not very helpful from the example provide (because it did not work) nor in ascertaining how to solve the problem. Anyways, here is my journey and configuration that will help me out the the future.
 
@@ -103,3 +109,37 @@ Now comes the part where most of my time was wasted away by testing, debugging, 
             </IfModule>
         </Directory>
     </VirtualHost>
+
+## Debuggging
+
+If you are having problems with Munin after installation. Here are some ideas on how to focus in upon the issue:
+
+1. Running `munin-check` will try its best to identify any issues that the script and identify. It's not the best utility, but it is a start.
+2. Next best thing is to turn on as much debugging as possible or run the 'munin-cron' for displaying output for more clues of problems.
+3. Don't forget to also look at your virtual host logs as well.
+
+Here is an example of my `munin-check` output with reported errors:
+
+    :::shell
+     [root@pg httpd]# munin-check
+        check /var/www/html/munin
+        check /var/lib/munin/cgi-tmp
+        # /var/lib/munin/cgi-tmp : Wrong owner (root != munin)
+        # /var/lib/munin/cgi-tmp/munin-cgi-graph : Wrong owner (apache != munin)
+        ls: cannot access /var/lib/munin/cgi-tmp/munin-cgi-graph/*: No such file or directory
+        # /var/lib/munin/cgi-tmp/munin-cgi-graph/* : Wrong owner ( != munin)
+        check /var/lib/munin/datafile
+        check /var/lib/munin/datafile.storable
+        check /var/lib/munin/graphs
+        check /var/lib/munin/htmlconf.storable
+        check /var/lib/munin/limits
+        check /var/lib/munin/limits.storable
+        check /var/lib/munin/localhost
+        check /var/lib/munin/munin-graph.stats
+        check /var/lib/munin/munin-update.stats
+        check /var/lib/munin/state-localhost-localhost.storable
+        check miscellaneous
+        Check done.  Please note that this script only checks most things,
+        not all things.
+
+        Please also note that this script may be buggy.

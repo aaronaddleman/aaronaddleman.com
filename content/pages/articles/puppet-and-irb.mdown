@@ -1,0 +1,8 @@
+Flag: draft
+
+# Puppet and IRB
+
+## show all modules that are a class
+
+    :::ruby
+    Object.constants.select{|c| ( ( eval(c).class ) == Module) } 
