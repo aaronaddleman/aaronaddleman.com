@@ -1,4 +1,4 @@
-Date: 26 September, 2013
+Date: 11 April, 2014
 Categories: categories/sublime-text-2
 Summary: When working in Sublime Text 2 there are some commands that are very helpful. Here is my collection of commands that I use very frequently.
 
@@ -11,3 +11,9 @@ type:
 `ctrl + p` then use `:12`
 
 to goto line number 12.
+
+## Expand selection brackets
+
+Sometimes I want to know which brackets are responsible for encapsulating the code I am reading. This shortcut helps me out:
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
