@@ -24,7 +24,8 @@
             %span
               &mdash;
             %span
-              = v["desc"]
+              = v["desc"]  
+  = haml :related_articles, :layout => false
 
   / = @page.metadata('yaml')
 
@@ -32,4 +33,5 @@
 
   = haml :comments, :layout => false
 #nav.large-4.columns
+  = haml :google_form_search, :layout => false
   = haml :sidebar, :layout => false

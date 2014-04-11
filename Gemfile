@@ -14,6 +14,7 @@ gem 'redcarpet'
 gem 'textpow'
 gem 'sassy-math'
 gem "nesta-plugin-yaml-metadata"
+gem 'nesta-plugin-related-by-category'
 
 
 # gem (RUBY_VERSION =~ /^1.9/) ? 'ruby-debug19': 'ruby-debug'

@@ -1,0 +1,7 @@
+- if has_related_articles?(@page)
+  %section.related-articles
+    %h2 Related articles
+    %ul
+      - related_by_category(@page).each do |article|
+        %li
+          %a(href="#{article.abspath}")= article.heading
