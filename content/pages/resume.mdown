@@ -14,9 +14,10 @@ computer network management, sun, cisco, windows, linux, freebsd, osx, veritas, 
 
 ## Network Administrator at Federal Reserve Bank of San Francisco
 
-November 2003 - Present (10 years)
-network administrator responsible for computer services both on the external network and internal network. desktop support for web development team.
-4 recommendations available upon request
+November 2003 - Present (11 years)
+Network Administrator and DevOps responsible for computer services both on the external/internal network and desktop support for web development team.
+
+Recommendations available upon request.
 
 ## UNIX Administrator at Riverdeep
 
@@ -62,8 +63,9 @@ EMC Storage Security
 
 University of California, Berkeley
 Project Management, 2012 - 2012
-Sir Francis Drake Highschool
+
+Sir Francis Drake High School
 
 # Interests
 
-new methods of implementing technology, gaming, snowboarding, anything japanese, movies, programming
+Photography, brewing beer, automation, electronics, creative artwork with programming.
