@@ -1,0 +1,48 @@
+Date: 14 April, 2014
+Categories: categories/sysadmin
+Summary: Parsing file information is great with the help of the `stat program`. This article shows some ways to display various information.
+flags: draft
+
+# The stat program
+
+  File: `/bin/bash'
+  Size: 938768      Blocks: 1840       IO Block: 4096   regular file
+Device: fd00h/64768d  Inode: 34241       Links: 1
+Access: (0755/-rwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2014-04-14 09:27:55.001969999 -0700
+Modify: 2013-02-21 13:09:50.000000000 -0800
+Change: 2014-04-11 09:05:04.941053206 -0700
+
+          
+/bin/bash 
+938768     = Size
+1840       = Blocks
+81ed       = ?
+0          = Uid
+0          = Gid
+fd00       = Device
+34241      = Inode
+1          = Links
+0          = ?
+0          = ?
+1397492875 = last access
+1361480990 = last modification
+1397232304 = last status change
+4096       = IO Block
+
+
+struct stat {
+    dev_t     st_dev;     /* ID of device containing file */
+    ino_t     st_ino;     /* inode number */
+    mode_t    st_mode;    /* protection */
+    nlink_t   st_nlink;   /* number of hard links */
+    uid_t     st_uid;     /* user ID of owner */
+    gid_t     st_gid;     /* group ID of owner */
+    dev_t     st_rdev;    /* device ID (if special file) */
+    off_t     st_size;    /* total size, in bytes */
+    blksize_t st_blksize; /* blocksize for file system I/O */
+    blkcnt_t  st_blocks;  /* number of 512B blocks allocated */
+    time_t    st_atime;   /* time of last access */
+    time_t    st_mtime;   /* time of last modification */
+    time_t    st_ctime;   /* time of last status change */
+};

@@ -1,0 +1,32 @@
+Date: May 27, 2014
+Categories: categories/php
+Summary: In an effort to learn more about PHP frameworks, TDD, and other topics related to application building, I found this nice method for having a (L/M)AMP stack with Vagrant.
+
+# PHP Development with Laravel and Vagrant
+
+## Standing up the virtual machine
+
+1. Install
+    + [vagrant](https://www.virtualbox.org)
+    + virtualbox
+1. Make a directory to work in
+1. Install vagrant plugins
+    +  __gem install berkshelf__
+    +  __vagrant plugin install vagrant-berkshelf --plugin-version=2.0.1__
+    +  __vagrant plugin install vagrant-hostmanager__
+1.  Add the following zip to your working directory and unzip
+    +  [special vagrant files](/attachments/Vagrant-Laravel-Stack.zip "vagrant and laravel files")
+1.  Edit variables in the Vagrantfile
+    +  `project_name` sets the project name
+    +  `ip_address` sets the ip address used by the hosting operating system
+    +  `database_password` sets the databases passwords
+1.  Turn it on and go for a coffee break for 8-10 minutes
+    2.  __vagrant up__
+2.  Review some notes on how to control the virtual machine
+    * Halting __vagrant halt__
+    * Resume __vagrant resume__
+    * Connect __vagrant ssh__
+    * Restart __vagrant reload__
+
+## 
+

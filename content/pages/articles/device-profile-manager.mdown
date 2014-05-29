@@ -1,0 +1,21 @@
+Date: May 20, 2014
+Categories: categories/sysadmin
+Summary: Stumbling over how to manage iOS devices with OS X Server. Here are my experiences and notes of what happened while running OS X Server at home to manage my iOS devices.
+
+# Device Profile Manager with iOS
+
+## Before you begin if you have a dynamic IP address
+
+### Dynamic IP with DNS
+
+To run the device profile manager, your OS X Server needs to be found on your network for management. For OSX macbooks, you might be able to get away with your internal network being all you need. If you want to manage iOS devices I would recommend getting your OS X Server accessible from the outside with a DNS record (or at least putting on your long term project list).
+
+I have decided to go with "noip.me". This allows me to use a DNS entry with my OS X Server and map its dynamic IP address
+
+## Adding a device to the profile manager
+
+Once all configured, point your device to the url:
+
+https://domain.com/mydevices/
+
+This will present you with the option of enrolling the iOS device to be controlled under management.

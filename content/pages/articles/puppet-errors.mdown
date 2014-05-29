@@ -1,0 +1,18 @@
+Date: 7 April, 2014
+Categories: categories/puppet
+Summary: My compilation of puppet errors and what I did to fix them. If you find any errors with my solutions, please post a comment.
+
+# Puppet errors and resolutions
+
+## Failed to initialize Augeas
+
+OS: ReHat 6.3
+Puppet: 3.0.0
+
+I got this error with a module while using Augeas:
+
+    Could not evaluate: unknown error - Failed to initialize Augeas
+
+I was really confused by this error message and quite frustrated as it was working a while back. This made for great concerns. So I started to look around the web and found a [bugzill article](https://bugzilla.redhat.com/show_bug.cgi?id=901663) which got me nowhere.
+
+Now I am making sure my yum updates are all applied to the OS and will run my test again.

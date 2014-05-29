@@ -1,0 +1,28 @@
+Date: May 14, 2014
+Categories: categories/sysadmin
+Summary: When using an SSL certificate there are some things to know...
+Flags: draft
+
+# SSL Certs
+
+## Making a CSR (certificate signing request)
+
+This shell command uses a 2048 bit encryption to create a key and a csr file:
+
+    :::shell
+    openssl req -new -newkey rsa:2048 -nodes -keyout star.frbsf.org.key -out star.frbsf.org.csr
+
+Sample output:
+
+    :::plain
+    Country Name (2 letter code) [AU]:US
+    State or Province Name (full name) [Some-State]:State
+    Locality Name (eg, city) []:City
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:Org Name
+    Organizational Unit Name (eg, section) []:Org Unit Unit Name
+    Common Name (e.g. server FQDN or YOUR name) []:*.site.com # <-- for wildcard ssl certs
+    Email Address []:**@company.org
+
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:the-password-here

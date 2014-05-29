@@ -1,0 +1,25 @@
+Date: 8 April, 2014
+Categories: categories/sublime
+Summary: When editing with Sublime Text 2 there is a nice shortcut you can take when you need to affect a pattern of text. By leveraging regular expressions, you can search for text very easy and apply changes.
+
+# Selective editing with Sublime Text 2
+
+This evening I had this line of text which was defining an array in a bash script:
+
+    :::shell
+    arary=( /etc /bin /usr/bin /usr/lbin /usr/usb /sbin /usr/sbin )
+
+While writing this line, I realized that I forgot to surround the directories in double quotes. So I set out to find a smooth way to affect all of these entries so that I can do awesome stuff in the future.
+
+Here is what I did:
+
+1. Highlighted the text I wanted to affect, from start to finish.
+2. Hit <kbd>Cmd</kdb> + <kbd>f</kbd> to bring up the `find` bar at the bottom.
+3. Enabled the use of regular expressions. Looks like this `.*`
+4. Enabled the use of "In selection". Looks like a arrow pointing down on a horizontal bar.
+5. Used the following regular expression `/[a-z/]*` which highlighted all of the entries.
+6. When I typed the `"` character, all of the entries were surrounded by the `"`.
+
+Here is the results I ended up having:
+
+    arary= ( "/etc" "/bin" "/usr/bin" "/usr/lbin" "/usr/usb" "/sbin" "/usr/sbin" )
